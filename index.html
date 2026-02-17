@@ -1,370 +1,797 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EMOOLA LTD - Financial Infrastructure & Mobile Intelligence</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EMOOLA LTD - Financial Infrastructure & Mobile Intelligence</title>
+<meta name="description" content="Building satellite-resilient market intelligence and real-world asset tracking solutions for the mobile economy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════════════════════
+   EMOOLA.NET — Institutional-Grade Design System
+   ══════════════════════════════════════════════════════════ */
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-            background: #1a1a1a;
-            color: #e8e8e8;
-            line-height: 1.6;
-        }
+:root {
+  --gold: #d4a574;
+  --gold-dim: rgba(212, 165, 116, 0.15);
+  --gold-border: rgba(212, 165, 116, 0.12);
+  --gold-glow: rgba(212, 165, 116, 0.06);
+  --bg-primary: #0e0e0e;
+  --bg-card: #141414;
+  --bg-elevated: #1a1a1a;
+  --border: rgba(255, 255, 255, 0.06);
+  --text-primary: #e8e4de;
+  --text-secondary: #8a8580;
+  --text-tertiary: #5a5550;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'IBM Plex Mono', 'SF Mono', Menlo, monospace;
+}
 
-        /* Navigation */
-        nav {
-            padding: 24px 48px;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        .logo-icon {
-            width: 52px;
-            height: 52px;
-            background: linear-gradient(135deg, #d4a574, #c9924d);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 24px;
-            color: #1a1a1a;
-        }
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--sans);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
 
-        .logo-text h1 {
-            font-size: 24px;
-            font-weight: 400;
-            letter-spacing: 0.15em;
-            color: #d4a574;
-            margin: 0;
-        }
+::selection { background: var(--gold); color: var(--bg-primary); }
 
-        .logo-text p {
-            font-size: 13px;
-            color: #999;
-            margin: 0;
-        }
+/* ── Layout ─────────────────────────────────────────────── */
 
-        /* Hero */
-        .hero {
-            padding: 120px 48px 100px;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
+.site-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
 
-        .hero h2 {
-            font-size: 56px;
-            font-weight: 400;
-            line-height: 1.2;
-            color: #d4a574;
-            margin-bottom: 32px;
-            letter-spacing: -0.01em;
-        }
+@media (max-width: 640px) {
+  .site-container { padding: 0 24px; }
+}
 
-        .hero-subtitle {
-            font-size: 18px;
-            color: #b8b8b8;
-            max-width: 800px;
-            margin: 0 auto 48px;
-            line-height: 1.7;
-        }
+/* ── Header ─────────────────────────────────────────────── */
 
-        .status-badge {
-            display: inline-block;
-            border: 1px solid #d4a574;
-            color: #d4a574;
-            padding: 12px 32px;
-            border-radius: 30px;
-            font-size: 13px;
-            font-weight: 400;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-        }
+.site-header {
+  padding: 48px 0 0;
+  border-bottom: 1px solid var(--border);
+}
 
-        /* Product section */
-        .product {
-            max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 48px;
-            text-align: center;
-        }
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
 
-        .product h3 {
-            font-size: 42px;
-            font-weight: 400;
-            color: #fff;
-            margin-bottom: 16px;
-        }
+.brand-mark {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--gold-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--gold);
+  letter-spacing: 0;
+  flex-shrink: 0;
+}
 
-        .product-subtitle {
-            color: #999;
-            font-size: 16px;
-            margin-bottom: 60px;
-        }
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
 
-        .product-card {
-            background: #242424;
-            border-radius: 12px;
-            padding: 48px;
-            margin-bottom: 48px;
-            text-align: left;
-        }
+.brand-name {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
 
-        .product-name {
-            font-size: 28px;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            color: #fff;
-            margin-bottom: 20px;
-        }
+.brand-descriptor {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--text-tertiary);
+  letter-spacing: 0.5px;
+}
 
-        .product-desc {
-            color: #b8b8b8;
-            font-size: 16px;
-            line-height: 1.8;
-            max-width: 900px;
-        }
+.header-nav {
+  display: flex;
+  gap: 32px;
+  padding-bottom: 20px;
+}
 
-        /* Features */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-            margin-top: 48px;
-        }
+.header-nav a {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+}
 
-        .feature {
-            background: #242424;
-            border-radius: 12px;
-            padding: 32px;
-            text-align: center;
-        }
+.header-nav a:hover { color: var(--gold); }
 
-        .feature-icon {
-            font-size: 36px;
-            margin-bottom: 16px;
-        }
+/* ── Hero ───────────────────────────────────────────────── */
 
-        .feature-title {
-            font-size: 16px;
-            font-weight: 600;
-            color: #fff;
-            margin-bottom: 12px;
-        }
+.hero {
+  padding: 100px 0 80px;
+  border-bottom: 1px solid var(--border);
+}
 
-        .feature-desc {
-            font-size: 14px;
-            color: #999;
-            line-height: 1.7;
-        }
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(32px, 4.5vw, 48px);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--text-primary);
+  max-width: 680px;
+  margin-bottom: 28px;
+  letter-spacing: -0.01em;
+}
 
-        /* Info sections */
-        .info-section {
-            max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 48px;
-        }
+.hero-description {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--text-secondary);
+  max-width: 560px;
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
 
-        .info-section h3 {
-            font-size: 32px;
-            font-weight: 400;
-            color: #d4a574;
-            margin-bottom: 12px;
-        }
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border: 1px solid var(--gold-border);
+  background: var(--gold-glow);
+}
 
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            margin-top: 40px;
-        }
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  animation: pulse-dot 3s ease-in-out infinite;
+}
 
-        @media (max-width: 768px) {
-            .info-grid { grid-template-columns: 1fr; }
-            nav { padding: 20px 24px; }
-            .hero, .product, .info-section { padding-left: 24px; padding-right: 24px; }
-            .hero h2 { font-size: 36px; }
-        }
+@keyframes pulse-dot {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
 
-        .info-card {
-            background: #242424;
-            border-radius: 12px;
-            padding: 32px;
-        }
+.status-text {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--gold);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
 
-        .info-card h4 {
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: #d4a574;
-            margin-bottom: 20px;
-        }
+/* ── Product Section ────────────────────────────────────── */
 
-        .info-card p, .info-card address {
-            font-size: 15px;
-            color: #b8b8b8;
-            line-height: 1.9;
-            font-style: normal;
-        }
+.product-section {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--border);
+}
 
-        .info-card a {
-            color: #d4a574;
-            text-decoration: none;
-        }
+.section-label {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--text-tertiary);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
 
-        /* Footer */
-        footer {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding: 40px 48px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 16px;
-            max-width: 1200px;
-            margin: 80px auto 0;
-        }
+.section-title {
+  font-family: var(--serif);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  letter-spacing: 0.3px;
+  margin-bottom: 48px;
+  font-style: italic;
+}
 
-        footer p {
-            font-size: 13px;
-            color: #666;
-        }
+.product-card {
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  padding: 48px 40px;
+  margin-bottom: 48px;
+}
 
-        footer a {
-            color: #999;
-            text-decoration: none;
-            font-size: 13px;
-            margin-left: 24px;
-        }
+.product-name {
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
 
-        footer a:hover { color: #d4a574; }
-    </style>
+.product-description {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  max-width: 600px;
+}
+
+.capabilities {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+@media (max-width: 700px) {
+  .capabilities { grid-template-columns: 1fr; }
+}
+
+.capability {
+  background: var(--bg-card);
+  padding: 36px 28px;
+}
+
+.capability-icon {
+  font-size: 20px;
+  margin-bottom: 16px;
+  display: block;
+  opacity: 0.7;
+}
+
+.capability-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  letter-spacing: 0.3px;
+}
+
+.capability-text {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-tertiary);
+  line-height: 1.6;
+}
+
+/* ── Contact ────────────────────────────────────────────── */
+
+.contact-section {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+@media (max-width: 640px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+.contact-label {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--text-tertiary);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.contact-value {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.contact-value a {
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(212, 165, 116, 0.2);
+  transition: border-color 0.2s;
+}
+
+.contact-value a:hover { border-color: var(--gold); }
+
+/* ── Corporate Info ─────────────────────────────────────── */
+
+.corporate-section {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.corporate-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+@media (max-width: 700px) {
+  .corporate-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+
+.corporate-item {}
+
+.corporate-item-title {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  letter-spacing: 0.3px;
+}
+
+.corporate-item-text {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-tertiary);
+  line-height: 1.7;
+}
+
+/* ── Satellite Entry Point ──────────────────────────────── */
+
+.sat-entry {
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.sat-trigger {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sat-trigger:focus-visible {
+  outline: 1px solid var(--gold);
+  outline-offset: 8px;
+}
+
+/* Outer orbit ring */
+.sat-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(212, 165, 116, 0.08);
+  border-radius: 50%;
+  transition: border-color 0.6s ease;
+}
+
+.sat-trigger:hover .sat-ring {
+  border-color: rgba(212, 165, 116, 0.2);
+}
+
+/* Middle ring */
+.sat-ring-mid {
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  border: 1px solid rgba(212, 165, 116, 0.06);
+  border-radius: 50%;
+  animation: sat-rotate 40s linear infinite;
+}
+
+@keyframes sat-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Orbiting dot */
+.sat-dot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--gold);
+  border-radius: 50%;
+  top: -2px;
+  left: 50%;
+  margin-left: -2px;
+  opacity: 0.6;
+  box-shadow: 0 0 6px rgba(212, 165, 116, 0.4);
+  transition: opacity 0.6s;
+}
+
+.sat-trigger:hover .sat-dot { opacity: 1; }
+
+/* Second orbiting dot */
+.sat-ring-mid::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: var(--gold);
+  border-radius: 50%;
+  bottom: -1.5px;
+  left: 50%;
+  margin-left: -1.5px;
+  opacity: 0.3;
+}
+
+/* Center element */
+.sat-core {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(212, 165, 116, 0.15);
+  border: 1px solid rgba(212, 165, 116, 0.2);
+  position: relative;
+  z-index: 1;
+  transition: all 0.6s ease;
+}
+
+.sat-trigger:hover .sat-core {
+  background: rgba(212, 165, 116, 0.25);
+  border-color: rgba(212, 165, 116, 0.4);
+  box-shadow: 0 0 20px rgba(212, 165, 116, 0.1);
+}
+
+/* Subtle label */
+.sat-label {
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--text-tertiary);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  white-space: nowrap;
+}
+
+.sat-trigger:hover .sat-label { opacity: 1; }
+
+/* ── Satellite Overlay ──────────────────────────────────── */
+
+.sat-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: var(--bg-primary);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.sat-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sat-overlay iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  opacity: 0;
+  transition: opacity 0.4s ease 0.2s;
+}
+
+.sat-overlay.active iframe { opacity: 1; }
+
+.sat-overlay-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 10001;
+  width: 40px;
+  height: 40px;
+  background: rgba(14, 14, 14, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s, border-color 0.2s;
+  font-family: var(--sans);
+  font-weight: 300;
+}
+
+.sat-overlay-close:hover {
+  color: var(--text-primary);
+  border-color: var(--gold-border);
+}
+
+.sat-overlay-close:focus-visible {
+  outline: 1px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.sat-overlay-branding {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  z-index: 10001;
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text-tertiary);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+/* ── Footer ─────────────────────────────────────────────── */
+
+.site-footer {
+  padding: 40px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-brand {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  letter-spacing: 1.5px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-links a {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--text-tertiary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: var(--gold); }
+
+.footer-copyright {
+  width: 100%;
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--text-tertiary);
+  opacity: 0.5;
+  margin-top: 8px;
+}
+
+/* ── Page Load Animation ────────────────────────────────── */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
 </head>
 <body>
 
-<nav>
-    <div class="logo-icon">E</div>
-    <div class="logo-text">
-        <h1>EMOOLA LTD</h1>
-        <p>Financial Infrastructure & Mobile Intelligence</p>
+<!-- ════════════════════════════════════════════════════════════
+     MAIN SITE CONTENT
+     ════════════════════════════════════════════════════════════ -->
+
+<div class="site-container">
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-brand">
+      <div class="brand-mark">E</div>
+      <div class="brand-text">
+        <div class="brand-name">EMOOLA LTD</div>
+        <div class="brand-descriptor">Financial Infrastructure &amp; Mobile Intelligence</div>
+      </div>
     </div>
-</nav>
+    <nav class="header-nav">
+      <a href="/cdn-cgi/l/email-protection#ee87808881ae8b838181828fc0808b9a">Contact</a>
+      <a href="https://emoola.net/privacy.html">Privacy</a>
+    </nav>
+  </header>
 
-<section class="hero">
-    <h2>Building the Future of Financial Infrastructure</h2>
-    <p class="hero-subtitle">Developing professional market intelligence and physical asset monitoring solutions for financial institutions and mobile-first markets.</p>
-    <div class="status-badge">Active Development</div>
-</section>
+  <!-- Hero -->
+  <section class="hero reveal">
+    <h1>Building the Future of Financial Infrastructure</h1>
+    <p class="hero-description">Developing professional market intelligence and physical asset monitoring solutions for financial institutions and mobile-first markets.</p>
+    <div class="status-indicator">
+      <span class="status-dot"></span>
+      <span class="status-text">Active Development</span>
+    </div>
+  </section>
 
-<section class="product">
-    <h3>Our Flagship Product</h3>
-    <p class="product-subtitle">Innovation in Market Intelligence & Data Infrastructure</p>
+  <!-- Product -->
+  <section class="product-section reveal">
+    <div class="section-label">Our Flagship Product</div>
+    <div class="section-title">Innovation in Market Intelligence &amp; Data Infrastructure</div>
 
     <div class="product-card">
-        <div class="product-name">PFX MARKETS</div>
-        <p class="product-desc">
-            An institutional-grade mobile platform providing resilient market data visualisation
-            and physical asset price monitoring. Designed for financial professionals requiring
-            reliable intelligence across global markets and demanding operating environments.
-        </p>
+      <div class="product-name">PFX Markets</div>
+      <p class="product-description">An institutional-grade mobile platform providing resilient market data visualisation and physical asset price monitoring. Designed for financial professionals requiring reliable intelligence across global markets and demanding operating environments.</p>
     </div>
 
-    <div class="features">
-        <div class="feature">
-            <div class="feature-icon">📊</div>
-            <div class="feature-title">Market Intelligence</div>
-            <div class="feature-desc">Real-time data visualisation and analysis infrastructure for institutional clients</div>
-        </div>
-        <div class="feature">
-            <div class="feature-icon">🛰️</div>
-            <div class="feature-title">Connectivity Resilience</div>
-            <div class="feature-desc">Reliable data delivery designed for remote and demanding operating environments</div>
-        </div>
-        <div class="feature">
-            <div class="feature-icon">🔐</div>
-            <div class="feature-title">Secure Infrastructure</div>
-            <div class="feature-desc">Bank-grade encryption and data custody protocols</div>
-        </div>
+    <div class="capabilities">
+      <div class="capability">
+        <span class="capability-icon" role="img" aria-label="Market Intelligence">&#x1F4CA;</span>
+        <div class="capability-title">Market Intelligence</div>
+        <div class="capability-text">Real-time data visualisation and analysis infrastructure</div>
+      </div>
+      <div class="capability">
+        <span class="capability-icon" role="img" aria-label="Satellite Resilience">&#x1F6F0;&#xFE0F;</span>
+        <div class="capability-title">Connectivity Resilience</div>
+        <div class="capability-text">Reliable data delivery designed for remote and demanding operating environments</div>
+      </div>
+      <div class="capability">
+        <span class="capability-icon" role="img" aria-label="Secure Infrastructure">&#x1F510;</span>
+        <div class="capability-title">Secure Infrastructure</div>
+        <div class="capability-text">Bank-grade encryption and data custody protocols</div>
+      </div>
     </div>
-</section>
+  </section>
 
-<section class="info-section">
-    <h3>Contact Information</h3>
-    <div class="info-grid">
-        <div class="info-card">
-            <h4>Email</h4>
-            <p><a href="mailto:info@emoola.net">info@emoola.net</a></p>
+  <!-- Contact -->
+  <section class="contact-section reveal">
+    <div class="section-label">Contact Information</div>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-label">Email</div>
+        <div class="contact-value"><a href="/cdn-cgi/l/email-protection#553c3b333a1530383a3a39347b3b3021"><span class="__cf_email__" data-cfemail="82ebece4edc2e7efededeee3acece7f6">[email&#160;protected]</span></a></div>
+      </div>
+      <div>
+        <div class="contact-label">Registered Office</div>
+        <div class="contact-value">
+          120 Avalon Drive<br>
+          Newcastle Upon Tyne<br>
+          NE15 7SF<br>
+          United Kingdom
         </div>
-        <div class="info-card">
-            <h4>Registered Office</h4>
-            <address>
-                120 Avalon Drive<br>
-                Newcastle Upon Tyne<br>
-                NE15 7SF<br>
-                United Kingdom
-            </address>
-        </div>
+      </div>
     </div>
-</section>
+  </section>
 
-<section class="info-section">
-    <h3>Corporate Information</h3>
-    <div class="info-grid">
-        <div class="info-card">
-            <h4>Company Registration</h4>
-            <p>
-                EMOOLA LTD is registered in England & Wales.<br>
-                We operate as a financial technology infrastructure provider
-                developing mobile intelligence solutions for institutional markets.
-            </p>
-        </div>
-        <div class="info-card">
-            <h4>Technology Focus</h4>
-            <p>
-                Our technology stack combines resilient connectivity,
-                real-time data processing, and secure infrastructure
-                to deliver reliable financial intelligence services.
-            </p>
-        </div>
+  <!-- Corporate -->
+  <section class="corporate-section reveal">
+    <div class="section-label">Corporate Information</div>
+    <div class="corporate-grid">
+      <div class="corporate-item">
+        <div class="corporate-item-title">Company Registration</div>
+        <p class="corporate-item-text">EMOOLA LTD is registered in England &amp; Wales. We operate as a financial technology infrastructure provider developing mobile intelligence solutions for institutional markets.</p>
+      </div>
+      <div class="corporate-item">
+        <div class="corporate-item-title">Technology Focus</div>
+        <p class="corporate-item-text">Our technology stack combines resilient connectivity, real-time data processing, and secure infrastructure to deliver reliable financial intelligence services.</p>
+      </div>
+      <div class="corporate-item">
+        <div class="corporate-item-title">Development Status</div>
+        <p class="corporate-item-text">PFX MARKETS is currently in active development with production-ready infrastructure. Beta access available for institutional partners and select investors.</p>
+      </div>
     </div>
-    <div class="info-grid" style="margin-top: 24px;">
-        <div class="info-card">
-            <h4>Development Status</h4>
-            <p>
-                PFX MARKETS is currently in active development with
-                production-ready infrastructure. Beta access available
-                for institutional partners and select investors.
-            </p>
-        </div>
-        <div class="info-card">
-            <!-- Empty card for grid symmetry -->
-        </div>
-    </div>
-</section>
+  </section>
 
-<footer>
-    <p>EMOOLA LTD</p>
-    <div>
-        <a href="/privacy.html">Privacy Policy</a>
-        <a href="mailto:info@emoola.net">Contact</a>
-    </div>
-</footer>
+  <!-- Satellite Entry Point -->
+  <div class="sat-entry reveal">
+    <button class="sat-trigger" id="satTrigger" aria-label="Open satellite tracking visualisation" title="Infrastructure Monitoring">
+      <div class="sat-ring">
+        <div class="sat-dot"></div>
+      </div>
+      <div class="sat-ring-mid"></div>
+      <div class="sat-core"></div>
+      <span class="sat-label">Live Infrastructure</span>
+    </button>
+  </div>
 
-<div style="text-align: center; padding: 20px 48px 40px; color: #555; font-size: 13px;">
-    © 2026 EMOOLA LTD. All Rights Reserved.
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-brand">EMOOLA LTD</div>
+    <div class="footer-links">
+      <a href="https://emoola.net/privacy.html">Privacy Policy</a>
+      <a href="/cdn-cgi/l/email-protection#6801060e07280d050707040946060d1c">Contact</a>
+    </div>
+    <div class="footer-copyright">&copy; 2026 EMOOLA LTD. All Rights Reserved.</div>
+  </footer>
+
 </div>
 
-</body>
-</html>
+<!-- ════════════════════════════════════════════════════════════
+     SATELLITE VISUALISATION OVERLAY
+     ════════════════════════════════════════════════════════════ -->
+
+<div class="sat-overlay" id="satOverlay" role="dialog" aria-modal="true" aria-label="Satellite tracking visualisation">
+  <button class="sat-overlay-close" id="satClose" aria-label="Close visualisation">&times;</button>
+  <iframe id="satFrame" title="EMOOLA Satellite Infrastructure Monitoring" loading="lazy"></iframe>
+  <div class="sat-overlay-branding">EMOOLA &middot; Infrastructure Monitoring</div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     SCRIPTS
+     ════════════════════════════════════════════════════════════ -->
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+(function() {
+  'use strict';
+
+  // ── Scroll reveal ────────────────────────────────────────
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  reveals.forEach(function(el) { observer.observe(el); });
+
+  // ── Satellite overlay ────────────────────────────────────
+  var overlay = document.getElementById('satOverlay');
+  var trigger = document.getElementById('satTrigger');
+  var closeBtn = document.getElementById('satClose');
+  var frame = document.getElementById('satFrame');
+  var appUrl = 'https://emoola.vercel.app/';
+  var isOpen = false;
+
+  function openOverlay() {
+    if (isOpen) return;
+    isOpen = true;
+    // Load iframe on first open
+    if (!frame.src) {
+      frame.src = appUrl;
+    }
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    // Focus close button for accessibility
+    setTimeout(function() { closeBtn.focus(); }, 500);
+  }
+
+  function closeOverlay() {
+    if (!isOpen) return;
+    isOpen = false;
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+    trigger.focus();
+  }
+
+  trigger.addEventListener('click', openOverlay);
+  closeBtn.addEventListener('click', closeOverlay);
+
+  // Close on Escape
+  document.addEven
