@@ -3,298 +3,281 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EMOOLA LTD - Financial Data Infrastructure & Market Intelligence</title>
+    <title>EMOOLA LTD - Financial Infrastructure & Mobile Intelligence</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-            background: #0a0a14;
-            color: #e8e8f0;
+            background: #1a1a1a;
+            color: #e8e8e8;
             line-height: 1.6;
         }
 
         /* Navigation */
         nav {
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-            position: sticky;
-            top: 0;
-            background: rgba(10,10,20,0.95);
-            backdrop-filter: blur(10px);
-            z-index: 100;
-        }
-
-        .logo {
+            padding: 24px 48px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
         .logo-icon {
-            width: 36px;
-            height: 36px;
-            background: linear-gradient(135deg, #4a6cf7, #7a4af7);
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, #d4a574, #c9924d);
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 800;
-            font-size: 18px;
-            color: white;
+            font-size: 24px;
+            color: #1a1a1a;
         }
 
         .logo-text {
-            font-size: 16px;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            color: #fff;
+            display: flex;
+            flex-direction: column;
         }
 
-        .logo-sub {
-            font-size: 11px;
-            color: #8888aa;
-            letter-spacing: 0.08em;
-            margin-top: 1px;
+        .logo-text h1 {
+            font-size: 24px;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            color: #d4a574;
+            margin: 0;
         }
 
-        .status-badge {
-            background: rgba(74, 108, 247, 0.15);
-            border: 1px solid rgba(74, 108, 247, 0.3);
-            color: #7a9ff5;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
+        .logo-text p {
+            font-size: 13px;
+            color: #999;
+            margin: 0;
         }
 
         /* Hero */
         .hero {
-            padding: 100px 40px 80px;
-            max-width: 860px;
+            padding: 120px 48px 100px;
+            max-width: 1200px;
             margin: 0 auto;
             text-align: center;
         }
 
-        .hero-label {
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: #6a7cf7;
-            margin-bottom: 24px;
+        .hero h2 {
+            font-size: 56px;
+            font-weight: 400;
+            line-height: 1.2;
+            color: #d4a574;
+            margin-bottom: 32px;
+            letter-spacing: -0.01em;
         }
 
-        h1 {
-            font-size: clamp(32px, 5vw, 52px);
-            font-weight: 800;
-            line-height: 1.15;
-            letter-spacing: -0.02em;
-            color: #ffffff;
-            margin-bottom: 24px;
-        }
-
-        .hero p {
+        .hero-subtitle {
             font-size: 18px;
-            color: #9090b0;
-            max-width: 600px;
+            color: #b8b8b8;
+            max-width: 800px;
             margin: 0 auto 48px;
             line-height: 1.7;
         }
 
-        /* Product section */
-        .product {
-            max-width: 900px;
-            margin: 0 auto 80px;
-            padding: 0 40px;
-        }
-
-        .section-label {
-            font-size: 11px;
-            font-weight: 600;
+        .status-badge {
+            display: inline-block;
+            border: 1px solid #d4a574;
+            color: #d4a574;
+            padding: 12px 32px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 400;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: #8888aa;
-            margin-bottom: 12px;
         }
 
-        h2 {
-            font-size: 28px;
-            font-weight: 700;
+        /* Product section */
+        .product {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 48px;
+            text-align: center;
+        }
+
+        .product h3 {
+            font-size: 42px;
+            font-weight: 400;
             color: #fff;
-            margin-bottom: 8px;
+            margin-bottom: 16px;
         }
 
         .product-subtitle {
-            color: #7070a0;
-            font-size: 14px;
-            margin-bottom: 40px;
+            color: #999;
+            font-size: 16px;
+            margin-bottom: 60px;
         }
 
         .product-card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.07);
-            border-radius: 16px;
-            padding: 36px;
-            margin-bottom: 24px;
+            background: #242424;
+            border-radius: 12px;
+            padding: 48px;
+            margin-bottom: 48px;
+            text-align: left;
         }
 
         .product-name {
-            font-size: 22px;
-            font-weight: 800;
-            letter-spacing: 0.05em;
-            color: #ffffff;
-            margin-bottom: 12px;
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            color: #fff;
+            margin-bottom: 20px;
         }
 
         .product-desc {
-            color: #8888aa;
-            font-size: 15px;
-            line-height: 1.7;
-            max-width: 680px;
+            color: #b8b8b8;
+            font-size: 16px;
+            line-height: 1.8;
+            max-width: 900px;
         }
 
         /* Features */
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 16px;
-            margin-top: 32px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
         }
 
         .feature {
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.06);
+            background: #242424;
             border-radius: 12px;
-            padding: 24px;
+            padding: 32px;
+            text-align: center;
         }
 
         .feature-icon {
-            font-size: 24px;
-            margin-bottom: 12px;
+            font-size: 36px;
+            margin-bottom: 16px;
         }
 
         .feature-title {
-            font-size: 14px;
-            font-weight: 700;
-            color: #d0d0e8;
-            margin-bottom: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 12px;
         }
 
         .feature-desc {
-            font-size: 13px;
-            color: #6868a0;
-            line-height: 1.6;
+            font-size: 14px;
+            color: #999;
+            line-height: 1.7;
         }
 
         /* Info sections */
-        .info-grid {
-            max-width: 900px;
-            margin: 0 auto 80px;
-            padding: 0 40px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
+        .info-section {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 48px;
         }
 
-        @media (max-width: 600px) {
+        .info-section h3 {
+            font-size: 32px;
+            font-weight: 400;
+            color: #d4a574;
+            margin-bottom: 12px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
             .info-grid { grid-template-columns: 1fr; }
-            nav { padding: 16px 20px; }
-            .hero, .product { padding-left: 20px; padding-right: 20px; }
-            .info-grid { padding-left: 20px; padding-right: 20px; }
+            nav { padding: 20px 24px; }
+            .hero, .product, .info-section { padding-left: 24px; padding-right: 24px; }
+            .hero h2 { font-size: 36px; }
         }
 
         .info-card {
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.06);
+            background: #242424;
             border-radius: 12px;
-            padding: 28px;
+            padding: 32px;
         }
 
-        .info-card h3 {
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 0.1em;
+        .info-card h4 {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: #5566cc;
-            margin-bottom: 14px;
+            color: #d4a574;
+            margin-bottom: 20px;
         }
 
         .info-card p, .info-card address {
-            font-size: 14px;
-            color: #7878a8;
-            line-height: 1.8;
+            font-size: 15px;
+            color: #b8b8b8;
+            line-height: 1.9;
             font-style: normal;
         }
 
         .info-card a {
-            color: #6a7cf7;
+            color: #d4a574;
             text-decoration: none;
         }
 
         /* Footer */
         footer {
-            border-top: 1px solid rgba(255,255,255,0.06);
-            padding: 32px 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 40px 48px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
             gap: 16px;
-            max-width: 900px;
-            margin: 0 auto;
+            max-width: 1200px;
+            margin: 80px auto 0;
         }
 
         footer p {
             font-size: 13px;
-            color: #4a4a6a;
+            color: #666;
         }
 
         footer a {
-            color: #5566aa;
+            color: #999;
             text-decoration: none;
             font-size: 13px;
-            margin-left: 20px;
+            margin-left: 24px;
         }
 
-        footer a:hover { color: #7a8fcf; }
+        footer a:hover { color: #d4a574; }
     </style>
 </head>
 <body>
 
 <nav>
-    <div class="logo">
-        <div class="logo-icon">E</div>
-        <div>
-            <div class="logo-text">EMOOLA LTD</div>
-            <div class="logo-sub">Financial Data Infrastructure</div>
-        </div>
+    <div class="logo-icon">E</div>
+    <div class="logo-text">
+        <h1>EMOOLA LTD</h1>
+        <p>Financial Infrastructure & Mobile Intelligence</p>
     </div>
-    <div class="status-badge">Active Development</div>
 </nav>
 
 <section class="hero">
-    <div class="hero-label">Financial Data Infrastructure & Market Intelligence</div>
-    <h1>Building Institutional-Grade Financial Data Infrastructure</h1>
-    <p>Developing professional market intelligence and physical asset monitoring solutions for financial institutions and mobile-first markets.</p>
+    <h2>Building the Future of Financial Infrastructure</h2>
+    <p class="hero-subtitle">Developing professional market intelligence and physical asset monitoring solutions for financial institutions and mobile-first markets.</p>
+    <div class="status-badge">Active Development</div>
 </section>
 
 <section class="product">
-    <div class="section-label">Our Flagship Product</div>
-    <h2>PFX MARKETS</h2>
-    <div class="product-subtitle">Professional Market Intelligence Platform</div>
+    <h3>Our Flagship Product</h3>
+    <p class="product-subtitle">Innovation in Market Intelligence & Asset Tracking</p>
 
     <div class="product-card">
         <div class="product-name">PFX MARKETS</div>
         <p class="product-desc">
             An institutional-grade mobile platform providing resilient market data visualisation
             and physical asset price monitoring. Designed for financial professionals requiring
-            reliable, real-time intelligence across global markets.
+            reliable intelligence across global markets and demanding operating environments.
         </p>
     </div>
 
@@ -307,7 +290,7 @@
         <div class="feature">
             <div class="feature-icon">🛰️</div>
             <div class="feature-title">Connectivity Resilience</div>
-            <div class="feature-desc">Reliable data delivery designed for demanding and remote operating environments</div>
+            <div class="feature-desc">Reliable data delivery designed for remote and demanding operating environments</div>
         </div>
         <div class="feature">
             <div class="feature-icon">🔐</div>
@@ -317,45 +300,71 @@
     </div>
 </section>
 
-<div class="info-grid">
-    <div class="info-card">
-        <h3>Contact Information</h3>
-        <address>
-            <a href="mailto:info@emoola.net">info@emoola.net</a><br><br>
-            120 Avalon Drive<br>
-            Newcastle Upon Tyne<br>
-            NE15 7SF<br>
-            United Kingdom
-        </address>
+<section class="info-section">
+    <h3>Contact Information</h3>
+    <div class="info-grid">
+        <div class="info-card">
+            <h4>Email</h4>
+            <p><a href="mailto:info@emoola.net">info@emoola.net</a></p>
+        </div>
+        <div class="info-card">
+            <h4>Registered Office</h4>
+            <address>
+                120 Avalon Drive<br>
+                Newcastle Upon Tyne<br>
+                NE15 7SF<br>
+                United Kingdom
+            </address>
+        </div>
     </div>
-    <div class="info-card">
-        <h3>Corporate Information</h3>
-        <p>
-            EMOOLA LTD is registered in England &amp; Wales.<br><br>
-            We operate as a financial technology infrastructure provider developing professional market intelligence solutions for institutional markets.
-        </p>
+</section>
+
+<section class="info-section">
+    <h3>Corporate Information</h3>
+    <div class="info-grid">
+        <div class="info-card">
+            <h4>Company Registration</h4>
+            <p>
+                EMOOLA LTD is registered in England & Wales.<br>
+                We operate as a financial technology infrastructure provider
+                developing mobile intelligence solutions for institutional markets.
+            </p>
+        </div>
+        <div class="info-card">
+            <h4>Technology Focus</h4>
+            <p>
+                Our technology stack combines resilient connectivity,
+                real-time data processing, and secure infrastructure
+                to deliver reliable financial intelligence services.
+            </p>
+        </div>
     </div>
-    <div class="info-card">
-        <h3>Technology Focus</h3>
-        <p>
-            Our technology stack combines resilient connectivity, real-time data processing, and secure infrastructure to deliver professional-grade financial intelligence services to institutional markets.
-        </p>
+    <div class="info-grid" style="margin-top: 24px;">
+        <div class="info-card">
+            <h4>Development Status</h4>
+            <p>
+                PFX MARKETS is currently in active development with
+                production-ready infrastructure. Beta access available
+                for institutional partners and select investors.
+            </p>
+        </div>
+        <div class="info-card">
+            <!-- Empty card for grid symmetry -->
+        </div>
     </div>
-    <div class="info-card">
-        <h3>Development Status</h3>
-        <p>
-            PFX MARKETS is currently in active development with production-ready infrastructure. Beta access available for institutional partners and selected financial sector clients.
-        </p>
-    </div>
-</div>
+</section>
 
 <footer>
-    <p>© 2026 EMOOLA LTD. All Rights Reserved.</p>
+    <p>EMOOLA LTD</p>
     <div>
         <a href="/privacy.html">Privacy Policy</a>
         <a href="mailto:info@emoola.net">Contact</a>
     </div>
 </footer>
+
+<div style="text-align: center; padding: 20px 48px 40px; color: #555; font-size: 13px;">
+    © 2026 EMOOLA LTD. All Rights Reserved.
+</div>
 
 </body>
 </html>
