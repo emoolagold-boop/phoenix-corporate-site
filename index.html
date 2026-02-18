@@ -3,16 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EMOOLA LTD - Financial Infrastructure & Mobile Intelligence</title>
-<meta name="description" content="Building satellite-resilient market intelligence and real-world asset tracking solutions for the mobile economy.">
+<title>EMOOLA LTD - Financial Infrastructure &amp; Mobile Intelligence</title>
+<meta name="description" content="Developing professional market intelligence and physical asset monitoring solutions for financial institutions and mobile-first markets.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
-/* ══════════════════════════════════════════════════════════
-   EMOOLA.NET — Institutional-Grade Design System
-   ══════════════════════════════════════════════════════════ */
-
 :root {
   --gold: #d4a574;
   --gold-dim: rgba(212, 165, 116, 0.15);
@@ -49,8 +45,6 @@ body {
 
 ::selection { background: var(--gold); color: var(--bg-primary); }
 
-/* ── Layout ─────────────────────────────────────────────── */
-
 .site-container {
   max-width: 960px;
   margin: 0 auto;
@@ -60,8 +54,6 @@ body {
 @media (max-width: 640px) {
   .site-container { padding: 0 24px; }
 }
-
-/* ── Header ─────────────────────────────────────────────── */
 
 .site-header {
   padding: 48px 0 0;
@@ -86,7 +78,6 @@ body {
   font-size: 20px;
   font-weight: 400;
   color: var(--gold);
-  letter-spacing: 0;
   flex-shrink: 0;
 }
 
@@ -129,8 +120,6 @@ body {
 }
 
 .header-nav a:hover { color: var(--gold); }
-
-/* ── Hero ───────────────────────────────────────────────── */
 
 .hero {
   padding: 100px 0 80px;
@@ -187,8 +176,6 @@ body {
   letter-spacing: 1.5px;
   text-transform: uppercase;
 }
-
-/* ── Product Section ────────────────────────────────────── */
 
 .product-section {
   padding: 80px 0;
@@ -279,8 +266,6 @@ body {
   line-height: 1.6;
 }
 
-/* ── Contact ────────────────────────────────────────────── */
-
 .contact-section {
   padding: 80px 0;
   border-bottom: 1px solid var(--border);
@@ -321,8 +306,6 @@ body {
 
 .contact-value a:hover { border-color: var(--gold); }
 
-/* ── Corporate Info ─────────────────────────────────────── */
-
 .corporate-section {
   padding: 80px 0;
   border-bottom: 1px solid var(--border);
@@ -338,8 +321,6 @@ body {
   .corporate-grid { grid-template-columns: 1fr; gap: 32px; }
 }
 
-.corporate-item {}
-
 .corporate-item-title {
   font-size: 12px;
   font-weight: 500;
@@ -354,8 +335,6 @@ body {
   color: var(--text-tertiary);
   line-height: 1.7;
 }
-
-/* ── Satellite Entry Point ──────────────────────────────── */
 
 .sat-entry {
   padding: 80px 0;
@@ -383,7 +362,6 @@ body {
   outline-offset: 8px;
 }
 
-/* Outer orbit ring */
 .sat-ring {
   position: absolute;
   width: 100%;
@@ -397,7 +375,6 @@ body {
   border-color: rgba(212, 165, 116, 0.2);
 }
 
-/* Middle ring */
 .sat-ring-mid {
   position: absolute;
   width: 70%;
@@ -412,7 +389,6 @@ body {
   to { transform: rotate(360deg); }
 }
 
-/* Orbiting dot */
 .sat-dot {
   position: absolute;
   width: 4px;
@@ -429,7 +405,6 @@ body {
 
 .sat-trigger:hover .sat-dot { opacity: 1; }
 
-/* Second orbiting dot */
 .sat-ring-mid::after {
   content: '';
   position: absolute;
@@ -443,7 +418,6 @@ body {
   opacity: 0.3;
 }
 
-/* Center element */
 .sat-core {
   width: 8px;
   height: 8px;
@@ -461,7 +435,6 @@ body {
   box-shadow: 0 0 20px rgba(212, 165, 116, 0.1);
 }
 
-/* Subtle label */
 .sat-label {
   position: absolute;
   bottom: -28px;
@@ -478,8 +451,6 @@ body {
 }
 
 .sat-trigger:hover .sat-label { opacity: 1; }
-
-/* ── Satellite Overlay ──────────────────────────────────── */
 
 .sat-overlay {
   position: fixed;
@@ -550,8 +521,6 @@ body {
   pointer-events: none;
 }
 
-/* ── Footer ─────────────────────────────────────────────── */
-
 .site-footer {
   padding: 40px 0;
   display: flex;
@@ -592,8 +561,6 @@ body {
   margin-top: 8px;
 }
 
-/* ── Page Load Animation ────────────────────────────────── */
-
 .reveal {
   opacity: 0;
   transform: translateY(12px);
@@ -608,13 +575,8 @@ body {
 </head>
 <body>
 
-<!-- ════════════════════════════════════════════════════════════
-     MAIN SITE CONTENT
-     ════════════════════════════════════════════════════════════ -->
-
 <div class="site-container">
 
-  <!-- Header -->
   <header class="site-header">
     <div class="header-brand">
       <div class="brand-mark">E</div>
@@ -624,12 +586,11 @@ body {
       </div>
     </div>
     <nav class="header-nav">
-      <a href="/cdn-cgi/l/email-protection#ee87808881ae8b838181828fc0808b9a">Contact</a>
+      <a href="mailto:info@emoola.net">Contact</a>
       <a href="https://emoola.net/privacy.html">Privacy</a>
     </nav>
   </header>
 
-  <!-- Hero -->
   <section class="hero reveal">
     <h1>Building the Future of Financial Infrastructure</h1>
     <p class="hero-description">Developing professional market intelligence and physical asset monitoring solutions for financial institutions and mobile-first markets.</p>
@@ -639,16 +600,13 @@ body {
     </div>
   </section>
 
-  <!-- Product -->
   <section class="product-section reveal">
     <div class="section-label">Our Flagship Product</div>
     <div class="section-title">Innovation in Market Intelligence &amp; Data Infrastructure</div>
-
     <div class="product-card">
       <div class="product-name">PFX Markets</div>
-      <p class="product-description">An institutional-grade mobile platform providing resilient market data visualisation and physical asset price monitoring. Designed for financial professionals requiring reliable intelligence across global markets and demanding operating environments.</p>
+      <p class="product-description">An institutional-grade mobile platform providing resilient market data visualisation and physical asset price monitoring. Designed for financial professionals requiring reliable intelligence in network-compromised environments.</p>
     </div>
-
     <div class="capabilities">
       <div class="capability">
         <span class="capability-icon" role="img" aria-label="Market Intelligence">&#x1F4CA;</span>
@@ -656,7 +614,7 @@ body {
         <div class="capability-text">Real-time data visualisation and analysis infrastructure</div>
       </div>
       <div class="capability">
-        <span class="capability-icon" role="img" aria-label="Satellite Resilience">&#x1F6F0;&#xFE0F;</span>
+        <span class="capability-icon" role="img" aria-label="Connectivity Resilience">&#x1F6F0;&#xFE0F;</span>
         <div class="capability-title">Connectivity Resilience</div>
         <div class="capability-text">Reliable data delivery designed for remote and demanding operating environments</div>
       </div>
@@ -668,13 +626,12 @@ body {
     </div>
   </section>
 
-  <!-- Contact -->
   <section class="contact-section reveal">
     <div class="section-label">Contact Information</div>
     <div class="contact-grid">
       <div>
         <div class="contact-label">Email</div>
-        <div class="contact-value"><a href="/cdn-cgi/l/email-protection#553c3b333a1530383a3a39347b3b3021"><span class="__cf_email__" data-cfemail="82ebece4edc2e7efededeee3acece7f6">[email&#160;protected]</span></a></div>
+        <div class="contact-value"><a href="mailto:info@emoola.net">info@emoola.net</a></div>
       </div>
       <div>
         <div class="contact-label">Registered Office</div>
@@ -688,7 +645,6 @@ body {
     </div>
   </section>
 
-  <!-- Corporate -->
   <section class="corporate-section reveal">
     <div class="section-label">Corporate Information</div>
     <div class="corporate-grid">
@@ -707,9 +663,8 @@ body {
     </div>
   </section>
 
-  <!-- Satellite Entry Point -->
   <div class="sat-entry reveal">
-    <button class="sat-trigger" id="satTrigger" aria-label="Open satellite tracking visualisation" title="Infrastructure Monitoring">
+    <button class="sat-trigger" id="satTrigger" aria-label="Open infrastructure monitoring visualisation" title="Infrastructure Monitoring">
       <div class="sat-ring">
         <div class="sat-dot"></div>
       </div>
@@ -719,49 +674,37 @@ body {
     </button>
   </div>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-brand">EMOOLA LTD</div>
     <div class="footer-links">
       <a href="https://emoola.net/privacy.html">Privacy Policy</a>
-      <a href="/cdn-cgi/l/email-protection#6801060e07280d050707040946060d1c">Contact</a>
+      <a href="mailto:info@emoola.net">Contact</a>
     </div>
     <div class="footer-copyright">&copy; 2026 EMOOLA LTD. All Rights Reserved.</div>
   </footer>
 
 </div>
 
-<!-- ════════════════════════════════════════════════════════════
-     SATELLITE VISUALISATION OVERLAY
-     ════════════════════════════════════════════════════════════ -->
-
-<div class="sat-overlay" id="satOverlay" role="dialog" aria-modal="true" aria-label="Satellite tracking visualisation">
+<div class="sat-overlay" id="satOverlay" role="dialog" aria-modal="true" aria-label="Infrastructure monitoring visualisation">
   <button class="sat-overlay-close" id="satClose" aria-label="Close visualisation">&times;</button>
-  <iframe id="satFrame" title="EMOOLA Satellite Infrastructure Monitoring" loading="lazy"></iframe>
+  <iframe id="satFrame" src="" title="EMOOLA Infrastructure Monitoring" loading="lazy"></iframe>
   <div class="sat-overlay-branding">EMOOLA &middot; Infrastructure Monitoring</div>
 </div>
 
-<!-- ════════════════════════════════════════════════════════════
-     SCRIPTS
-     ════════════════════════════════════════════════════════════ -->
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 (function() {
   'use strict';
 
-  // ── Scroll reveal ────────────────────────────────────────
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver(function(entries) {
+  var reveals = document.querySelectorAll('.reveal');
+  var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
       }
     });
   }, { threshold: 0.1 });
-
   reveals.forEach(function(el) { observer.observe(el); });
 
-  // ── Satellite overlay ────────────────────────────────────
   var overlay = document.getElementById('satOverlay');
   var trigger = document.getElementById('satTrigger');
   var closeBtn = document.getElementById('satClose');
@@ -772,13 +715,11 @@ body {
   function openOverlay() {
     if (isOpen) return;
     isOpen = true;
-    // Load iframe on first open
-    if (!frame.src) {
-      frame.src = appUrl;
+    if (!frame.getAttribute('src') || frame.getAttribute('src') === '') {
+      frame.setAttribute('src', appUrl);
     }
     overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
-    // Focus close button for accessibility
     setTimeout(function() { closeBtn.focus(); }, 500);
   }
 
@@ -790,8 +731,28 @@ body {
     trigger.focus();
   }
 
-  trigger.addEventListener('click', openOverlay);
-  closeBtn.addEventListener('click', closeOverlay);
+  if (trigger) {
+    trigger.addEventListener('click', openOverlay);
+  }
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeOverlay);
+  }
 
-  // Close on Escape
-  document.addEven
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && isOpen) {
+      closeOverlay();
+    }
+  });
+
+  if (overlay) {
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) {
+        closeOverlay();
+      }
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
