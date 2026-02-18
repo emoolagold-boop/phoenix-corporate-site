@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="EMOOLA LTD - Financial Infrastructure & Mobile Intelligence. Building professional market intelligence and physical asset monitoring solutions.">
-    <title>EMOOLA LTD - Financial Infrastructure & Mobile Intelligence</title>
+    <meta name="description" content="EMOOLA LTD - Financial Infrastructure &amp; Mobile Intelligence. Developing satellite-resilient market data visualization and real-world asset tracking.">
+    <meta name="keywords" content="financial infrastructure, mobile intelligence, market data, RWA tracking, PFX Markets">
+    <title>EMOOLA LTD - Financial Infrastructure &amp; Mobile Intelligence</title>
     <style>
         * {
             margin: 0;
@@ -59,11 +58,6 @@
             font-weight: bold;
             color: #0a0a0a;
             box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
-        }
-        
-        .company-info {
-            display: flex;
-            flex-direction: column;
         }
         
         .company-name {
@@ -151,65 +145,83 @@
             border: 1px solid #2a2a2a;
             border-radius: 12px;
             padding: 50px;
-            margin-bottom: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-showcase::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #C5A059, #D4AF37);
         }
         
         .product-name {
             font-size: 32px;
             color: #C5A059;
             margin-bottom: 20px;
-            font-weight: 600;
+            font-weight: 700;
+            letter-spacing: 2px;
         }
         
         .product-description {
             font-size: 18px;
             color: #b0b0b0;
             line-height: 1.8;
+            margin-bottom: 30px;
         }
         
-        /* Features Grid */
-        .features-grid {
+        .feature-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
         
         .feature-card {
-            background: #151515;
+            background: #0a0a0a;
             border: 1px solid #2a2a2a;
-            border-radius: 12px;
-            padding: 40px 30px;
-            text-align: center;
+            border-radius: 8px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            border-color: #C5A059;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(197, 160, 89, 0.2);
         }
         
         .feature-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
+            font-size: 40px;
+            margin-bottom: 15px;
         }
         
         .feature-title {
-            font-size: 20px;
-            color: #ffffff;
-            margin-bottom: 15px;
+            font-size: 18px;
+            color: #C5A059;
+            margin-bottom: 10px;
             font-weight: 600;
         }
         
         .feature-text {
-            font-size: 16px;
+            font-size: 14px;
             color: #888;
-            line-height: 1.7;
+            line-height: 1.6;
         }
         
         /* Contact Section */
         .contact {
             padding: 80px 20px;
-            background: #0a0a0a;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
             border-top: 1px solid #2a2a2a;
         }
         
         .contact-content {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
         }
         
@@ -221,40 +233,38 @@
         }
         
         .contact-item {
-            background: #151515;
-            border: 1px solid #2a2a2a;
-            border-radius: 12px;
-            padding: 30px;
+            text-align: center;
         }
         
         .contact-label {
             font-size: 14px;
-            color: #C5A059;
-            margin-bottom: 15px;
-            font-weight: 600;
-            letter-spacing: 1px;
+            color: #888;
             text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
         }
         
         .contact-value {
             font-size: 16px;
-            color: #b0b0b0;
-            line-height: 1.8;
+            color: #C5A059;
+            font-weight: 500;
         }
         
         .contact-value a {
             color: #C5A059;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
         
         .contact-value a:hover {
-            text-decoration: underline;
+            color: #D4AF37;
         }
         
         /* Legal Section */
         .legal {
-            padding: 80px 20px;
-            background: #0a0a0a;
+            background: #151515;
+            padding: 60px 20px;
+            border-top: 1px solid #2a2a2a;
         }
         
         .legal-content {
@@ -266,183 +276,59 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
-            margin-top: 40px;
         }
         
         .legal-section {
-            background: #151515;
+            background: #0a0a0a;
             border: 1px solid #2a2a2a;
-            border-radius: 12px;
+            border-radius: 8px;
             padding: 30px;
         }
         
         .legal-title {
             font-size: 18px;
             color: #C5A059;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-weight: 600;
         }
         
         .legal-text {
-            font-size: 16px;
-            color: #b0b0b0;
-            line-height: 1.8;
-        }
-        
-        /* Satellite Overlay Entry */
-        .sat-entry {
-            display: flex;
-            justify-content: center;
-            padding: 40px 20px;
-        }
-        
-        .sat-trigger {
-            background: none;
-            border: none;
-            cursor: pointer;
-            position: relative;
-            width: 80px;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .sat-ring {
-            position: absolute;
-            border: 1px solid rgba(197, 160, 89, 0.3);
-            border-radius: 50%;
-            animation: orbit 8s linear infinite;
-        }
-        
-        .sat-ring:nth-child(1) {
-            width: 60px;
-            height: 60px;
-        }
-        
-        .sat-ring:nth-child(2) {
-            width: 40px;
-            height: 40px;
-        }
-        
-        .sat-core {
-            width: 12px;
-            height: 12px;
-            background: #C5A059;
-            border-radius: 50%;
-            box-shadow: 0 0 20px rgba(197, 160, 89, 0.5);
-        }
-        
-        .sat-dot {
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            background: #C5A059;
-            border-radius: 50%;
-            top: -3px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        @keyframes orbit {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        
-        .sat-trigger:hover .sat-ring {
-            border-color: rgba(197, 160, 89, 0.6);
-        }
-        
-        .sat-trigger:hover .sat-core {
-            box-shadow: 0 0 30px rgba(197, 160, 89, 0.8);
-        }
-        
-        /* Satellite Overlay */
-        .sat-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 1000;
-            display: none;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .sat-overlay.active {
-            display: flex;
-        }
-        
-        .sat-overlay iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            opacity: 0;
-            transition: opacity 0.5s;
-        }
-        
-        .sat-overlay.active iframe {
-            opacity: 1;
-        }
-        
-        .sat-overlay-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: rgba(197, 160, 89, 0.2);
-            border: 1px solid #C5A059;
-            color: #C5A059;
-            font-size: 32px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            cursor: pointer;
-            z-index: 1001;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            line-height: 1;
-        }
-        
-        .sat-overlay-close:hover {
-            background: rgba(197, 160, 89, 0.3);
+            font-size: 14px;
+            color: #888;
+            line-height: 1.6;
         }
         
         /* Footer */
         footer {
             background: #0a0a0a;
-            border-top: 1px solid #C5A059;
-            padding: 30px 20px;
+            padding: 40px 20px;
+            border-top: 1px solid #2a2a2a;
             margin-top: auto;
         }
         
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
+            text-align: center;
         }
         
         .footer-company {
-            font-size: 18px;
+            font-size: 16px;
             color: #C5A059;
+            margin-bottom: 15px;
             font-weight: 600;
         }
         
         .footer-links {
-            display: flex;
-            gap: 30px;
+            margin-bottom: 20px;
         }
         
         .footer-links a {
             color: #888;
             text-decoration: none;
+            margin: 0 15px;
             font-size: 14px;
+            transition: color 0.3s ease;
         }
         
         .footer-links a:hover {
@@ -450,16 +336,11 @@
         }
         
         .footer-copyright {
-            width: 100%;
-            text-align: center;
+            font-size: 12px;
             color: #666;
-            font-size: 13px;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid #2a2a2a;
         }
         
-        /* Mobile Responsive */
+        /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 32px;
@@ -474,10 +355,14 @@
             }
             
             .product-showcase {
-                padding: 30px;
+                padding: 30px 20px;
             }
             
-            .features-grid, .contact-grid, .legal-grid {
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .feature-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -488,66 +373,70 @@
         <div class="header-content">
             <div class="logo-section">
                 <div class="logo">E</div>
-                <div class="company-info">
+                <div>
                     <div class="company-name">EMOOLA LTD</div>
-                    <div class="tagline">Financial Infrastructure & Mobile Intelligence</div>
+                    <div class="tagline">Financial Infrastructure &amp; Mobile Intelligence</div>
                 </div>
             </div>
         </div>
     </header>
-
+    
     <section class="hero">
         <div class="hero-content">
             <h1>Building the Future of Financial Infrastructure</h1>
             <p>Developing professional market intelligence and physical asset monitoring solutions for financial institutions and mobile-first markets.</p>
-            <div class="status-badge">ACTIVE DEVELOPMENT</div>
+            <span class="status-badge">ACTIVE DEVELOPMENT</span>
         </div>
     </section>
-
+    
     <section class="product">
         <div class="product-content">
-            <div class="section-title">Our Flagship Product</div>
-            <div class="section-subtitle">Innovation in Market Intelligence & Data Infrastructure</div>
+            <h2 class="section-title">Our Flagship Product</h2>
+            <p class="section-subtitle">Innovation in Market Intelligence &amp; Asset Tracking</p>
             
             <div class="product-showcase">
                 <div class="product-name">PFX MARKETS</div>
-                <div class="product-description">
-                    An institutional-grade mobile platform providing resilient market data visualisation
-                    and physical asset price monitoring. Designed for financial professionals requiring
-                    reliable intelligence across global markets and demanding operating environments.
-                </div>
-            </div>
-
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <div class="feature-title">Market Intelligence</div>
-                    <div class="feature-text">Real-time data visualisation and analysis infrastructure for institutional clients</div>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🛰️</div>
-                    <div class="feature-title">Connectivity Resilience</div>
-                    <div class="feature-text">Reliable data delivery designed for remote and demanding operating environments</div>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔐</div>
-                    <div class="feature-title">Secure Infrastructure</div>
-                    <div class="feature-text">Bank-grade encryption and data custody protocols</div>
+                <p class="product-description">
+                    An institutional-grade mobile platform providing satellite-resilient market data visualization 
+                    and real-world asset (RWA) tracking. Designed for financial professionals requiring reliable 
+                    intelligence across global markets and demanding operating environments.
+                </p>
+                
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <div class="feature-title">Market Intelligence</div>
+                        <div class="feature-text">Real-time data visualization and analysis infrastructure</div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🛰️</div>
+                        <div class="feature-title">Connectivity Resilience</div>
+                        <div class="feature-text">Reliable data delivery designed for remote and demanding operating environments</div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🔐</div>
+                        <div class="feature-title">Secure Infrastructure</div>
+                        <div class="feature-text">Bank-grade encryption and data custody protocols</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
+    
     <section class="contact">
         <div class="contact-content">
-            <div class="section-title">Contact Information</div>
+            <h2 class="section-title">Contact Information</h2>
+            
             <div class="contact-grid">
                 <div class="contact-item">
                     <div class="contact-label">Email</div>
                     <div class="contact-value">
-                        <a href="mailto:info@emoola.net">info@emoola.net</a>
+                        <a href="/cdn-cgi/l/email-protection#e881868e87a88d8587878489c6868d9c"><span class="__cf_email__" data-cfemail="ff96919990bf9a929090939ed1919a8b">[email&#160;protected]</span></a>
                     </div>
                 </div>
+                
                 <div class="contact-item">
                     <div class="contact-label">Registered Office</div>
                     <div class="contact-value">
@@ -560,116 +449,51 @@
             </div>
         </div>
     </section>
-
+    
     <section class="legal">
         <div class="legal-content">
-            <div class="section-title">Corporate Information</div>
+            <h2 class="section-title">Corporate Information</h2>
+            
             <div class="legal-grid">
                 <div class="legal-section">
                     <div class="legal-title">Company Registration</div>
                     <div class="legal-text">
-                        EMOOLA LTD is registered in England & Wales.
-                        We operate as a financial technology infrastructure provider
+                        EMOOLA LTD is registered in England &amp; Wales.
+                        We operate as a financial technology infrastructure provider 
                         developing mobile intelligence solutions for institutional markets.
                     </div>
                 </div>
+                
                 <div class="legal-section">
                     <div class="legal-title">Technology Focus</div>
                     <div class="legal-text">
-                        Our technology stack combines resilient connectivity,
-                        real-time data processing, and secure infrastructure
+                        Our technology stack combines resilient connectivity, 
+                        real-time data processing, and secure infrastructure 
                         to deliver reliable financial intelligence services.
                     </div>
                 </div>
+                
                 <div class="legal-section">
                     <div class="legal-title">Development Status</div>
                     <div class="legal-text">
-                        PFX MARKETS is currently in active development with
-                        production-ready infrastructure. Beta access available
+                        PFX MARKETS is currently in active development with 
+                        production-ready infrastructure. Beta access available 
                         for institutional partners and select investors.
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <div class="sat-entry">
-        <button class="sat-trigger" id="satTrigger" aria-label="View infrastructure monitoring">
-            <div class="sat-ring">
-                <div class="sat-dot"></div>
-            </div>
-            <div class="sat-ring">
-                <div class="sat-dot"></div>
-            </div>
-            <div class="sat-core"></div>
-        </button>
-    </div>
-
+    
     <footer>
         <div class="footer-content">
             <div class="footer-company">EMOOLA LTD</div>
             <div class="footer-links">
                 <a href="https://emoola.net/privacy.html">Privacy Policy</a>
-                <a href="mailto:info@emoola.net">Contact</a>
+                <a href="/cdn-cgi/l/email-protection#1970777f76597c747676757837777c6d">Contact</a>
             </div>
-            <div class="footer-copyright">© 2026 EMOOLA LTD. All Rights Reserved.</div>
+                   <div class="footer-copyright">© 2026 EMOOLA LTD. All Rights Reserved.</div>
         </div>
     </footer>
-
-    <div class="sat-overlay" id="satOverlay">
-        <button class="sat-overlay-close" id="satClose" aria-label="Close">&times;</button>
-        <iframe id="satFrame" src="" title="EMOOLA Infrastructure Monitoring" loading="lazy"></iframe>
-    </div>
-
-    <script>
-    (function() {
-        'use strict';
-
-        var overlay = document.getElementById('satOverlay');
-        var trigger = document.getElementById('satTrigger');
-        var closeBtn = document.getElementById('satClose');
-        var frame = document.getElementById('satFrame');
-        var appUrl = 'https://emoola.vercel.app/';
-        var isOpen = false;
-
-        if (!trigger || !closeBtn || !overlay || !frame) {
-            return;
-        }
-
-        function openOverlay() {
-            if (isOpen) return;
-            isOpen = true;
-            if (!frame.getAttribute('src')) {
-                frame.setAttribute('src', appUrl);
-            }
-            overlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            setTimeout(function() { closeBtn.focus(); }, 500);
-        }
-
-        function closeOverlay() {
-            if (!isOpen) return;
-            isOpen = false;
-            overlay.classList.remove('active');
-            document.body.style.overflow = '';
-            trigger.focus();
-        }
-
-        trigger.addEventListener('click', openOverlay);
-        closeBtn.addEventListener('click', closeOverlay);
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && isOpen) {
-                closeOverlay();
-            }
-        });
-
-        overlay.addEventListener('click', function(e) {
-            if (e.target === overlay) {
-                closeOverlay();
-            }
-        });
-    })();
-    </script>
 </body>
 </html>
