@@ -607,6 +607,41 @@
             color: #555;
         }
 
+        .footer-contact {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-contact-item {
+            font-size: 13px;
+            color: #777;
+        }
+
+        .footer-label {
+            color: #888;
+            margin-right: 6px;
+        }
+
+        .footer-contact-item a {
+            color: #C5A059;
+            text-decoration: none;
+        }
+
+        .footer-contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .footer-contact {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+        }
+
         /* Scroll Reveal */
         .reveal {
             opacity: 0;
@@ -728,29 +763,13 @@
         </div>
     </section>
     
-    <section class="contact reveal" id="contact">
-        <div class="contact-content">
-            <h2 class="section-title" style="font-size:28px;">Contact</h2>
-            
-            <div class="contact-bar">
-                <div class="contact-item">
-                    <div class="contact-label">Email</div>
-                    <div class="contact-value">
-                        <a href="mailto:info@emoola.net">info@emoola.net</a>
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-label">Registered Office</div>
-                    <div class="contact-value">
-                        120 Avalon Drive, Newcastle Upon Tyne<br>
-                        NE15 7SF, United Kingdom
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
+
+    <div class="sat-entry">
+        <button class="sat-trigger" id="satTrigger" aria-label="Open infrastructure monitoring" title="Infrastructure Monitoring">
+            <div class="sat-ring-outer">
+                <div class="sat-orb"></div>
+
+
     <section class="legal reveal">
         <div class="legal-content">
             <h2 class="section-title">Corporate Information</h2>
@@ -788,25 +807,25 @@
         </div>
     </section>
 
-    <!-- Satellite Entry Point -->
-    <div class="sat-entry">
-        <button class="sat-trigger" id="satTrigger" aria-label="Open infrastructure monitoring" title="Infrastructure Monitoring">
-            <div class="sat-ring-outer">
-                <div class="sat-orb"></div>
-            </div>
-            <div class="sat-ring-inner"></div>
-            <div class="sat-core"></div>
-        </button>
-        <div class="sat-hint">Live Infrastructure</div>
-    </div>
-    
     <footer>
         <div class="footer-content">
             <div class="footer-company">EMOOLA LTD</div>
+            
+            <div class="footer-contact">
+                <div class="footer-contact-item">
+                    <span class="footer-label">Email:</span>
+                    <a href="mailto:info@emoola.net">info@emoola.net</a>
+                </div>
+                <div class="footer-contact-item">
+                    <span class="footer-label">Registered Office:</span>
+                    <span>120 Avalon Drive, Newcastle Upon Tyne, NE15 7SF, United Kingdom</span>
+                </div>
+            </div>
+            
             <div class="footer-links">
                 <a href="https://emoola.net/privacy.html">Privacy Policy</a>
-                <a href="mailto:info@emoola.net">Contact</a>
             </div>
+            
             <div class="footer-copyright">&copy; 2026 EMOOLA LTD. All Rights Reserved. Registered in England &amp; Wales.</div>
         </div>
     </footer>
