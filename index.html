@@ -603,8 +603,113 @@
         }
         
         .footer-copyright {
+
+        .footer-contact {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-contact-item {
+            font-size: 13px;
+            color: #777;
+        }
+
+        .footer-label {
+            color: #888;
+            margin-right: 6px;
+        }
+
+        .footer-contact-item a {
+            color: #C5A059;
+            text-decoration: none;
+        }
+
+        .footer-contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .footer-contact {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+        }
             font-size: 12px;
+
+        .footer-contact {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-contact-item {
+            font-size: 13px;
+            color: #777;
+        }
+
+        .footer-label {
+            color: #888;
+            margin-right: 6px;
+        }
+
+        .footer-contact-item a {
+            color: #C5A059;
+            text-decoration: none;
+        }
+
+        .footer-contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .footer-contact {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+        }
             color: #555;
+
+        .footer-contact {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-contact-item {
+            font-size: 13px;
+            color: #777;
+        }
+
+        .footer-label {
+            color: #888;
+            margin-right: 6px;
+        }
+
+        .footer-contact-item a {
+            color: #C5A059;
+            text-decoration: none;
+        }
+
+        .footer-contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .footer-contact {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+        }
         }
 
         .footer-contact {
@@ -762,13 +867,22 @@
             </div>
         </div>
     </section>
+    
 
+<!-- Satellite Entry Point -->
     <div class="sat-entry">
         <button class="sat-trigger" id="satTrigger" aria-label="Open infrastructure monitoring" title="Infrastructure Monitoring">
             <div class="sat-ring-outer">
                 <div class="sat-orb"></div>
+            </div>
+            <div class="sat-ring-inner"></div>
+            <div class="sat-core"></div>
+        </button>
+        <div class="sat-hint">Live Infrastructure</div>
+    </div>
+    
 
-    <section class="legal reveal">
+<section class="legal reveal">
         <div class="legal-content">
             <h2 class="section-title">Corporate Information</h2>
             
@@ -805,6 +919,7 @@
         </div>
     </section>
 
+
     <footer>
         <div class="footer-content">
             <div class="footer-company">EMOOLA LTD</div>
@@ -828,6 +943,7 @@
         </div>
     </footer>
 
+<!-- Satellite Overlay -->
     <div class="sat-overlay" id="satOverlay" role="dialog" aria-modal="true" aria-label="Infrastructure monitoring">
         <button class="sat-close" id="satClose" aria-label="Close">&times;</button>
         <iframe id="satFrame" src="" title="Infrastructure Monitoring" loading="lazy"></iframe>
