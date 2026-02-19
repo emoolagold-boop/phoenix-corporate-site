@@ -761,7 +761,7 @@
                     <div class="legal-text">
                         EMOOLA LTD is incorporated in England &amp; Wales as a financial technology infrastructure provider, 
                         developing mobile intelligence solutions for institutional markets.
-                        Verify via <a href="https://data.companieshouse.gov.uk/doc/company/09594521" target="_blank" rel="noopener noreferrer">Companies House</a>.
+                        Verify via <a href="https://find-and-update.company-information.service.gov.uk/" target="_blank" rel="noopener noreferrer">Companies House</a>.
                     </div>
                 </div>
                 
@@ -846,14 +846,18 @@
             }
             overlay.classList.add('active');
             document.body.style.overflow = 'hidden';
+            history.pushState({overlay: true}, '', '#infrastructure');
             setTimeout(function() { closeBtn.focus(); }, 450);
         }
 
-        function closeSat() {
+        function closeSat(viaBackButton) {
             if (!isOpen) return;
             isOpen = false;
             overlay.classList.remove('active');
             document.body.style.overflow = '';
+            if (!viaBackButton && window.location.hash === '#infrastructure') {
+                history.back();
+            }
             trigger.focus();
         }
 
@@ -869,6 +873,12 @@
                 if (e.target === overlay) closeSat();
             });
         }
+
+        window.addEventListener('popstate', function() {
+            if (isOpen) {
+                closeSat(true);
+            }
+        });
     })();
     </script>
 </body>
