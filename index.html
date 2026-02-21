@@ -14,7 +14,7 @@
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-            background: #1a1a1a;
+            background: #000000;
             color: #e0e0e0;
             min-height: 100vh;
             display: flex;
@@ -73,6 +73,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            margin: 0 auto;
         }
         
         .sat-trigger:focus-visible {
@@ -83,6 +84,9 @@
         
         .sat-ring-outer {
             position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             width: 100%;
             height: 100%;
             border: 2px solid rgba(197, 160, 89, 0.3);
@@ -96,6 +100,9 @@
         
         .sat-ring-inner {
             position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             width: 70%;
             height: 70%;
             border: 2px solid rgba(197, 160, 89, 0.2);
@@ -104,8 +111,8 @@
         }
         
         @keyframes sat-orbit {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
         }
         
         .sat-orb {
@@ -157,7 +164,7 @@
             position: fixed;
             inset: 0;
             z-index: 10000;
-            background: #1a1a1a;
+            background: #000000;
             opacity: 0;
             visibility: hidden;
             transition: opacity 0.4s ease, visibility 0.4s ease;
@@ -182,9 +189,9 @@
             position: absolute;
             top: 20px;
             right: 20px;
-            background: rgba(197, 160, 89, 0.2);
-            border: 2px solid #C5A059;
-            color: #C5A059;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.6);
             font-size: 32px;
             width: 50px;
             height: 50px;
@@ -199,8 +206,9 @@
         }
         
         .sat-close:hover {
-            background: rgba(197, 160, 89, 0.4);
-            transform: rotate(90deg);
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.4);
         }
         
         footer {
@@ -226,7 +234,7 @@
     <div class="logo-section">
         <div class="logo">E</div>
         <div class="company-name">EMOOLA LTD</div>
-        <div class="tagline">Financial Infrastructure & Mobile Intelligence</div>
+        <div class="tagline">Global provider of financial market data</div>
     </div>
     
     <div class="sat-entry">
@@ -239,7 +247,7 @@
             </div>
             <div class="sat-core"></div>
         </button>
-        <div class="sat-hint">Infrastructure Monitoring</div>
+        <div class="sat-hint">Satellite infrastructure</div>
     </div>
     
     <footer>
