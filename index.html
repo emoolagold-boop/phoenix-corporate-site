@@ -6,6 +6,9 @@
     <meta name="description" content="EMOOLA LTD — Financial Data Services &amp; Market Intelligence. Developing professional financial data services and market intelligence solutions for financial institutions and mobile-first markets.">
     <meta name="keywords" content="financial data services, market intelligence, market data, financial intelligence, PFX Markets, data delivery">
     <title>EMOOLA LTD — Financial Data Services &amp; Market Intelligence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -14,9 +17,9 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-            background: #000000;
-            color: #e0e0e0;
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #060609;
+            color: #d8d4cc;
             line-height: 1.6;
             min-height: 100vh;
             display: flex;
@@ -25,17 +28,18 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        ::selection { background: #C5A059; color: #000000; }
+        ::selection { background: #C5A059; color: #060609; }
         
         /* Header */
         header {
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-            border-bottom: 1px solid #C5A059;
-            padding: 30px 20px;
+            background: rgba(8, 8, 12, 0.95);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.35);
+            padding: 28px 20px;
             position: sticky;
             top: 0;
             z-index: 100;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
         }
         
         .header-content {
@@ -67,17 +71,21 @@
         }
         
         .company-name {
-            font-size: 28px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 26px;
             font-weight: 700;
             color: #C5A059;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
         }
         
         .tagline {
-            font-size: 14px;
-            color: #888;
-            margin-top: 5px;
-            letter-spacing: 0.5px;
+            font-size: 12px;
+            color: rgba(197, 160, 89, 0.45);
+            margin-top: 4px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 400;
         }
 
         .header-nav {
@@ -96,10 +104,22 @@
         .header-nav a:hover { color: #C5A059; }
         
         /* Hero Section */
-        .hero { background: #000000;
-            padding: 80px 20px;
+        .hero {
+            background: linear-gradient(180deg, #060609 0%, #0c0c12 50%, #060609 100%);
+            padding: 100px 20px 90px;
             text-align: center;
-            border-bottom: 1px solid #2a2a2a;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.08);
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(197, 160, 89, 0.15), transparent);
         }
         
         .hero-content {
@@ -108,41 +128,50 @@
         }
         
         .hero h1 {
-            font-size: 48px;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 52px;
             color: #C5A059;
-            margin-bottom: 20px;
-            font-weight: 700;
+            margin-bottom: 28px;
+            font-weight: 600;
             letter-spacing: 1px;
+            line-height: 1.15;
         }
 
         .hero-oneliner {
-            font-size: 15px;
-            color: #C5A059;
-            letter-spacing: 1.5px;
+            font-size: 13px;
+            color: rgba(197, 160, 89, 0.55);
+            letter-spacing: 3px;
             text-transform: uppercase;
-            margin-bottom: 24px;
-            opacity: 0.7;
+            margin-bottom: 32px;
+            font-weight: 500;
+            padding: 12px 0;
+            border-top: 1px solid rgba(197, 160, 89, 0.1);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+            display: inline-block;
         }
         
         .hero p {
-            font-size: 20px;
-            color: #b0b0b0;
-            margin-bottom: 40px;
-            line-height: 1.8;
+            font-size: 18px;
+            color: rgba(200, 196, 188, 0.7);
+            margin-bottom: 44px;
+            line-height: 1.9;
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .status-badge {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: rgba(197, 160, 89, 0.1);
-            border: 1px solid #C5A059;
-            color: #C5A059;
-            padding: 12px 30px;
+            background: rgba(197, 160, 89, 0.06);
+            border: 1px solid rgba(197, 160, 89, 0.25);
+            color: rgba(197, 160, 89, 0.8);
+            padding: 10px 28px;
             border-radius: 25px;
-            font-size: 14px;
+            font-size: 11px;
             font-weight: 600;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
         }
 
         .status-badge-dot {
@@ -160,8 +189,19 @@
         
         /* Product Section */
         .product {
-            padding: 80px 20px;
-            background: #000000;
+            padding: 90px 20px;
+            background: #0a0a0e;
+            position: relative;
+        }
+
+        .product::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(197, 160, 89, 0.1), transparent);
         }
         
         .product-content {
@@ -170,23 +210,26 @@
         }
         
         .section-title {
-            font-size: 36px;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 34px;
             color: #ffffff;
             text-align: center;
-            margin-bottom: 20px;
-            font-weight: 600;
+            margin-bottom: 16px;
+            font-weight: 500;
         }
         
         .section-subtitle {
-            font-size: 18px;
-            color: #888;
+            font-size: 14px;
+            color: rgba(197, 160, 89, 0.4);
             text-align: center;
             margin-bottom: 60px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
         }
         
         .product-showcase {
-            background: linear-gradient(135deg, #1a1a1a 0%, #151515 100%);
-            border: 1px solid #2a2a2a;
+            background: linear-gradient(135deg, #0f0f14 0%, #0c0c10 100%);
+            border: 1px solid rgba(197, 160, 89, 0.08);
             border-radius: 12px;
             padding: 50px;
             position: relative;
@@ -204,17 +247,18 @@
         }
         
         .product-name {
-            font-size: 32px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 28px;
             color: #C5A059;
             margin-bottom: 20px;
             font-weight: 700;
-            letter-spacing: 2px;
+            letter-spacing: 4px;
         }
         
         .product-description {
-            font-size: 18px;
-            color: #b0b0b0;
-            line-height: 1.8;
+            font-size: 17px;
+            color: rgba(200, 196, 188, 0.65);
+            line-height: 1.9;
             margin-bottom: 30px;
         }
         
@@ -226,8 +270,8 @@
         }
         
         .feature-card {
-            background: #000000;
-            border: 1px solid #2a2a2a;
+            background: rgba(6, 6, 9, 0.8);
+            border: 1px solid rgba(197, 160, 89, 0.06);
             border-radius: 8px;
             padding: 30px;
             transition: all 0.3s ease;
@@ -235,9 +279,10 @@
         }
         
         .feature-card:hover {
-            border-color: #C5A059;
+            border-color: rgba(197, 160, 89, 0.3);
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(197, 160, 89, 0.2);
+            box-shadow: 0 10px 40px rgba(197, 160, 89, 0.08);
+            background: rgba(12, 12, 18, 0.9);
         }
 
         .feature-card:hover .feature-detail {
@@ -260,13 +305,13 @@
         
         .feature-text {
             font-size: 14px;
-            color: #888;
+            color: rgba(200, 196, 188, 0.5);
             line-height: 1.6;
         }
 
         .feature-detail {
             font-size: 13px;
-            color: #666;
+            color: rgba(200, 196, 188, 0.35);
             line-height: 1.5;
             max-height: 0;
             opacity: 0;
@@ -283,9 +328,20 @@
         
         /* Contact Section */
         .contact {
-            padding: 60px 20px;
-            background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
-            border-top: 1px solid #2a2a2a;
+            padding: 70px 20px;
+            background: linear-gradient(180deg, #0a0a0e 0%, #08080c 100%);
+            border-top: none;
+            position: relative;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(197, 160, 89, 0.1), transparent);
         }
         
         .contact-content {
@@ -333,9 +389,19 @@
         
         /* Corporate / Legal Section */
         .legal {
-            background: #0e0e0e;
-            padding: 60px 20px;
-            border-top: 1px solid #2a2a2a;
+            background: #060609;
+            padding: 70px 20px;
+            position: relative;
+        }
+
+        .legal::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(197, 160, 89, 0.1), transparent);
         }
         
         .legal-content {
@@ -355,8 +421,8 @@
         }
         
         .legal-section {
-            background: #000000;
-            border: 1px solid #1e1e1e;
+            background: rgba(10, 10, 14, 0.8);
+            border: 1px solid rgba(197, 160, 89, 0.05);
             border-radius: 8px;
             padding: 28px;
         }
@@ -388,13 +454,23 @@
 
         /* Satellite Entry Point */
         .sat-entry {
-            padding: 60px 20px;
+            padding: 70px 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            border-top: 1px solid #2a2a2a;
-            background: #000000;
+            background: linear-gradient(180deg, #060609 0%, #08080e 50%, #060609 100%);
+            position: relative;
+        }
+
+        .sat-entry::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(197, 160, 89, 0.08), transparent);
         }
 
         .sat-trigger {
@@ -557,10 +633,9 @@
         
         /* Footer */
         footer {
-            border-top: 2px solid #222;
-            background: #000000;
+            background: #050508;
             padding: 40px 20px;
-            border-top: 1px solid #2a2a2a;
+            border-top: 1px solid rgba(197, 160, 89, 0.06);
             margin-top: auto;
         }
         
@@ -815,7 +890,7 @@
                 </div>
                 <div class="footer-contact-item">
                     <span class="footer-label">Registered Office:</span>
-                    <span>Aston House, Newcastle Upon Tyne</span>
+                    <span>Aston House, Newcastle Upon Tyne, NE5 1NB, United Kingdom</span>
                 </div>
             </div>
             
